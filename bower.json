@@ -1,0 +1,20 @@
+{
+  "name": "connect4",
+  "description": "\"# connect4\"",
+  "main": "index.html",
+  "authors": [
+    "ramesh"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/itsramesh/connect4",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "pixi": "https://github.com/pixijs/pixi.js.git"
+  }
+}
