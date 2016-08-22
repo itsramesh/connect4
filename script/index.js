@@ -168,9 +168,9 @@ function setup() {
 }
 
 function loadBallToTheGrid(pointer) {
-    // if(currentPlayerHasFinished) {
-    //     return;
-    // }
+    if(currentPlayerHasFinished) {
+        return;
+    }
     for(let i=holderGrid.col - 1; i>=0; i--){
         if(!gridData[pointer][i].occupied){
             gridData[pointer][i].animate = true;
@@ -253,15 +253,15 @@ function showOutPut(res){
     }
     
     if(res.traverseByRow && res.traverseByCol && (res.traverseByRow > 0)) {
-        for(let i=res.row, j=res.col; i>= res.row+res.traverseByRow, j>= res.col+res.traverseByCol; i--, j++){
+        for(let i=res.row, j=res.col; i>= res.row-res.traverseByRow, j<= res.col-res.traverseByCol; i--, j++){
             mapGamePoints(i, j);
         }
     }
 
     function mapGamePoints(i, j) {
-            gamePoints.i = new Sprite(id["win.png"]);
-            gamePoints.i.position.set(gridData[i][j].x, gridData[i][j].y);
-            gameScene.addChild(gamePoints.i);
+        gamePoints.i = new Sprite(id["win.png"]);
+        gamePoints.i.position.set(gridData[i][j].x, gridData[i][j].y);
+        gameScene.addChild(gamePoints.i);
     }
 
     gameEnd();
